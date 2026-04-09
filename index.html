@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MathemaTest</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="mt-header">
+    <div class="mt-container mt-header-inner">
+      <div class="brand">
+        <span class="logo">∑</span>
+        <span class="brand-name">MathemaTest</span>
+      </div>
+      <nav>
+        <a class="nav-link" href="login.html">Log Out</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mt-container">
+    <section class="hero">
+      <h1>MathemaTest</h1>
+      <p>Generate quick MCQ quizzes based on a topic or uploaded files. Choose a difficulty and number of questions, then test yourself.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Quiz Settings</h2>
+      <form id="quizForm" class="form-grid" novalidate>
+        <div class="form-control">
+          <label for="topic">Topic</label>
+          <input id="topic" name="topic" type="text" placeholder="e.g., trigonometry, algebra, calculus" required />
+          <small class="hint">You can leave Topic empty if you upload a file.</small>
+        </div>
+
+        <div class="form-control">
+          <label for="difficulty">Difficulty</label>
+          <select id="difficulty" name="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <div class="form-control">
+          <label for="count">Number of Questions</label>
+          <select id="count" name="count">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+
+        <div class="form-control">
+          <label for="files">Upload Files (optional)</label>
+          <input id="files" name="files" type="file" multiple accept=".txt,.pdf,.md,.doc,.docx,.rtf,.csv,.json,image/*,application/pdf" />
+          <small class="hint">PDF and other formats are accepted. Content extraction may be limited in the browser.</small>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Generate Quiz</button>
+          <button type="button" id="resetBtn" class="btn">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="results" class="panel hidden">
+      <div class="results-header">
+        <h2>Generated Quiz</h2>
+        <div class="results-actions">
+          <button id="showAnswersBtn" class="btn">Show Answers</button>
+          <button id="regenBtn" class="btn">Regenerate</button>
+        </div>
+      </div>
+
+      <div id="quizContainer" class="quiz"></div>
+    </section>
+  </main>
+
+  <footer class="mt-footer">
+    <div class="mt-container">
+      <span>© <span id="year"></span> MathemaTest</span>
+      <span class="muted">Built for quick practice</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+

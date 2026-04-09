@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MathemaTest — Login</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+  <main class="auth-container">
+    <div class="auth-card">
+      <div class="brand center">
+        <span class="logo">∑</span>
+        <span class="brand-name">MathemaTest</span>
+      </div>
+      <h1>Welcome back</h1>
+      <p class="muted">Sign in to generate your math quiz</p>
+
+      <form id="loginForm" class="stack" novalidate>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="••••••••" required />
+        </div>
+        <button type="submit" class="btn primary full">Continue</button>
+      </form>
+
+      <div class="divider"><span>or</span></div>
+
+      <div class="oauth-grid">
+        <button class="btn outline oauth" data-provider="google">
+          <img alt="" src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" />
+          <span>Continue with Google</span>
+        </button>
+        <button class="btn outline oauth" data-provider="github">
+          <img alt="" src="https://github.githubassets.com/favicons/favicon.svg" />
+          <span>Continue with GitHub</span>
+        </button>
+        <button class="btn outline oauth" data-provider="microsoft">
+          <img alt="" src="https://www.microsoft.com/favicon.ico" />
+          <span>Continue with Microsoft</span>
+        </button>
+      </div>
+
+      <!-- <p class="tiny muted center">Demo login only; no data is stored.</p> -->
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
